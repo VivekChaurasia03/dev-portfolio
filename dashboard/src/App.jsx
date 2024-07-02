@@ -13,6 +13,7 @@ import ViewProject from "./pages/ViewProject";
 import UpdateProject from "./pages/UpdateProject";
 import { useDispatch } from "react-redux";
 import { getUser } from "./store/slices/userSlice";
+import "./App.css";
 
 const App = () => {
     const dispatch = useDispatch();
