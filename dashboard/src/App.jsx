@@ -14,11 +14,13 @@ import UpdateProject from "./pages/UpdateProject";
 import { useDispatch } from "react-redux";
 import { getUser } from "./store/slices/userSlice";
 import "./App.css";
+import { getAllMessages } from "./store/slices/MessagesSlice";
 
 const App = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getUser());
+        dispatch(getAllMessages());
     }, []);
 
     return (
