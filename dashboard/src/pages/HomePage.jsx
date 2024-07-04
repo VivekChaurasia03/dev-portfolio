@@ -99,7 +99,9 @@ const HomePage = () => {
                                                 ? "text-accent-foreground bg-accent"
                                                 : "text-muted-foreground"
                                         } transition-colors hover:text-foreground md:h-8 w-9`}
-                                        onClick={() => setActive("Add Project")}
+                                        onClick={() =>
+                                            setActive("Add Projects")
+                                        }
                                     >
                                         <FolderGit className="w-5 h-5" />
                                         <span className="sr-only">
@@ -121,7 +123,7 @@ const HomePage = () => {
                                                 ? "text-accent-foreground bg-accent"
                                                 : "text-muted-foreground"
                                         } transition-colors hover:text-foreground md:h-8 w-9`}
-                                        onClick={() => setActive("Add Skill")}
+                                        onClick={() => setActive("Add Skills")}
                                     >
                                         <Code className="w-5 h-5" />
                                         <span className="sr-only">
@@ -168,7 +170,7 @@ const HomePage = () => {
                                                 : "text-muted-foreground"
                                         } transition-colors hover:text-foreground md:h-8 w-9`}
                                         onClick={() =>
-                                            setActive("Add Timeline")
+                                            setActive("Add Timelines")
                                         }
                                     >
                                         <History className="w-5 h-5" />
@@ -286,7 +288,7 @@ const HomePage = () => {
                                             ? "text-foreground"
                                             : "text-muted-foreground hover:text-foreground"
                                     } `}
-                                    onClick={() => setActive("Add Project")}
+                                    onClick={() => setActive("Add Projects")}
                                 >
                                     <FolderGit className="h-5 w-5" />
                                     Add Project
@@ -298,7 +300,7 @@ const HomePage = () => {
                                             ? "text-foreground"
                                             : "text-muted-foreground hover:text-foreground"
                                     } `}
-                                    onClick={() => setActive("Add Skill")}
+                                    onClick={() => setActive("Add Skills")}
                                 >
                                     <Code className="h-5 w-5" />
                                     Add Skill
@@ -310,7 +312,9 @@ const HomePage = () => {
                                             ? "text-foreground"
                                             : "text-muted-foreground hover:text-foreground"
                                     } `}
-                                    onClick={() => setActive("Add Application")}
+                                    onClick={() =>
+                                        setActive("Add Applications")
+                                    }
                                 >
                                     <LayoutGrid className="h-5 w-5" />
                                     Add Application
@@ -334,7 +338,7 @@ const HomePage = () => {
                                             ? "text-foreground"
                                             : "text-muted-foreground hover:text-foreground"
                                     } `}
-                                    onClick={() => setActive("Add Timeline")}
+                                    onClick={() => setActive("Add Timelines")}
                                 >
                                     <History className="h-5 w-5" />
                                     Add Timeline
@@ -376,13 +380,13 @@ const HomePage = () => {
                     switch (active) {
                         case "Dashboard":
                             return <Dashboard />;
-                        case "Add Project":
+                        case "Add Projects":
                             return <AddProject />;
-                        case "Add Skill":
+                        case "Add Skills":
                             return <AddSkill />;
-                        case "Add Application":
+                        case "Add Applications":
                             return <AddApplication />;
-                        case "Add Timeline":
+                        case "Add Timelines":
                             return <AddTimeline />;
                         case "Messages":
                             return <Messages />;

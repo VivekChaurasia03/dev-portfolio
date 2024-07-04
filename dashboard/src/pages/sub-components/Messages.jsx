@@ -13,7 +13,7 @@ import {
     deleteMessage,
     getAllMessages,
     resetMessageSlice,
-} from "@/store/slices/MessagesSlice";
+} from "@/store/slices/messagesSlice";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";

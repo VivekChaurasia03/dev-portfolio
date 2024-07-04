@@ -14,13 +14,19 @@ import UpdateProject from "./pages/UpdateProject";
 import { useDispatch } from "react-redux";
 import { getUser } from "./store/slices/userSlice";
 import "./App.css";
-import { getAllMessages } from "./store/slices/MessagesSlice";
+import { getAllMessages } from "./store/slices/messagesSlice";
+import { getAllTimeline } from "./store/slices/timelineSlice";
+import { getAllSkills } from "./store/slices/skillSlice";
+import { getAllApplications } from "./store/slices/applicationSlice";
 
 const App = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getUser());
         dispatch(getAllMessages());
+        dispatch(getAllTimeline());
+        dispatch(getAllSkills());
+        dispatch(getAllApplications());
     }, []);
 
     return (
