@@ -138,21 +138,21 @@ export const addNewSkill = (skillData) => async (dispatch) => {
 };
 
 export const updateSkill = (skillData) => async (dispatch) => {
-    dispatch(skillSlice.actions.deleteSkillRequest());
+    dispatch(skillSlice.actions.updateSkillRequest());
     try {
         const { data } = await axios.put(
             `http://localhost:4000/api/v1/skill/update/${id}`,
             skillData,
             {
                 withCredentials: true,
-                headers: { "Content-Type": "application/json" },
+                headers: { "Content-Type": "multipart/form-data" },
             }
         );
-        dispatch(skillSlice.actions.deleteSkillSuccess(data.message));
+        dispatch(skillSlice.actions.updateSkillSuccess(data.message));
         dispatch(skillSlice.actions.clearAllErrors());
     } catch (error) {
         dispatch(
-            skillSlice.actions.deleteSkillFailed(error.response.data.message)
+            skillSlice.actions.updateSkillFailed(error.response.data.message)
         );
     }
 };

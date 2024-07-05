@@ -2,10 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import {
     addNewApplication,
-    clearAllApplicationErrors,
+    clearAllSoftwareApplicationErrors,
     getAllApplications,
-    resetApplicationSlice,
-} from "@/store/slices/applicationSlice";
+    resetSoftwareApplicationSlice,
+} from "@/store/slices/softwareApplicationSlice";
 import { Image } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -44,11 +44,11 @@ const AddApplication = () => {
     useEffect(() => {
         if (error) {
             toast.error(error);
-            dispatch(clearAllApplicationErrors());
+            dispatch(clearAllSoftwareApplicationErrors());
         }
         if (message) {
             toast.success(message);
-            dispatch(resetApplicationSlice());
+            dispatch(resetSoftwareApplicationSlice());
             dispatch(getAllApplications());
         }
     }, [dispatch, error, loading]);
