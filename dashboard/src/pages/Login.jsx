@@ -85,9 +85,9 @@ const Login = () => {
             </div>
             <div className="hidden bg-muted lg:block">
                 <img
-                    src="/placeholder.svg"
+                    src="/LOGIN_HOLDER.png"
                     alt="Image"
-                    className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+                    className="h-[100vh] w-full object-cover dark:brightness-[0.2] dark:grayscale"
                 />
             </div>
         </div>

@@ -12,6 +12,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import SpecialLoadingButton from "./SpecialLoadingButton";
 import { Textarea } from "@/components/ui/textarea";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select";
 
 // stack: String,
 // deployed: String,
@@ -65,13 +72,13 @@ const AddProject = () => {
             dispatch(resetProjectSlice());
             dispatch(getAllProjects());
         }
-    }, [dispatch, error, loading]);
+    }, [dispatch, error, loading, message]);
 
     return (
         <>
             <div className="flex justify-center items-center min-h-[100vh] sm:gap-4 sm:py-4 sm:pl-14">
                 <form
-                    className="w-[100%] px-5 md:w-[650px]"
+                    className="w-[100%] px-5 md:w-[900px]"
                     onSubmit={handleAddNewProject}
                 >
                     <div className="space-y-12">
@@ -166,7 +173,7 @@ const AddProject = () => {
                                         <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
                                             <input
                                                 type="text"
-                                                placeholder="Technologies"
+                                                placeholder="HTML, CSS, JavaScript, Tailwind...."
                                                 value={technologies}
                                                 onChange={(e) =>
                                                     setTechnologies(
@@ -202,22 +209,24 @@ const AddProject = () => {
                                     </Label>
                                     <div className="mt-2">
                                         <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
-                                            <select
+                                            <Select
                                                 value={deployed}
-                                                onChange={(e) =>
-                                                    setDeployed(e.target.value)
-                                                }
-                                                className="block flex-1 border-0 bg-transparent py-1.5 pl-1 pr-3 text-gray-900 placeholder:text-gray-400 placeholder:pl-1.5 focus:ring-0 sm:text-sm sm:leading-6"
-                                                style={{
-                                                    paddingRight: "2.5rem",
-                                                }}
+                                                onValueChange={(
+                                                    selectedValue
+                                                ) => setDeployed(selectedValue)}
                                             >
-                                                <option value="" disabled>
-                                                    Select an option
-                                                </option>
-                                                <option value="yes">Yes</option>
-                                                <option value="no">No</option>
-                                            </select>
+                                                <SelectTrigger>
+                                                    <SelectValue placeholder="Deployed" />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    <SelectItem value="Yes">
+                                                        Yes
+                                                    </SelectItem>
+                                                    <SelectItem value="No">
+                                                        No
+                                                    </SelectItem>
+                                                </SelectContent>
+                                            </Select>
                                         </div>
                                     </div>
                                 </div>
