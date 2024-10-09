@@ -175,7 +175,7 @@ export const addNewProject = (projectData) => async (dispatch) => {
     }
 };
 
-export const updateProject = (projectData) => async (dispatch) => {
+export const updateProject = (id, projectData) => async (dispatch) => {
     dispatch(projectSlice.actions.updateProjectRequest());
     try {
         const { data } = await axios.put(
@@ -183,7 +183,7 @@ export const updateProject = (projectData) => async (dispatch) => {
             projectData,
             {
                 withCredentials: true,
-                headers: { "Content-Type": "application/json" },
+                headers: { "Content-Type": "multipart/form-data" },
             }
         );
         dispatch(projectSlice.actions.updateProjectSuccess(data.message));

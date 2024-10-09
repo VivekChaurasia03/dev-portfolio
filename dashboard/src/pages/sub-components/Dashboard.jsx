@@ -377,7 +377,8 @@ const Dashboard = () => {
                                                             colSpan={3}
                                                             className="text-center"
                                                         >
-                                                            No Skills added
+                                                            No Software
+                                                            Applications added
                                                         </TableCell>
                                                     </TableRow>
                                                 )}
