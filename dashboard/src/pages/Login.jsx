@@ -17,7 +17,15 @@ const Login = () => {
     const dispatch = useDispatch();
     const navigateTo = useNavigate();
 
+    const [triggeredLogin, setTriggeredLogin] = useState(false);
+
     const handleLogin = () => {
+        // Avoid triggering login without input values
+        if (!email || !password) {
+            toast.error("Please provide both email and password.");
+            return;
+        }
+        setTriggeredLogin(true); // Track button click
         dispatch(login(email, password));
     };
 
@@ -25,11 +33,12 @@ const Login = () => {
         if (error) {
             toast.error(error);
             dispatch(clearAllUserErrors());
+            setTriggeredLogin(false); // Reset button state on error
         }
         if (isAuthenticated) {
             navigateTo("/");
         }
-    }, [dispatch, isAuthenticated, error, loading]);
+    }, [dispatch, isAuthenticated, error]);
 
     return (
         <div className="w-full lg:grid lg:min-h-[100vh] lg:grid-cols-2 xl:min-h-[100vh]">
@@ -69,7 +78,7 @@ const Login = () => {
                                 required
                             />
                         </div>
-                        {loading ? (
+                        {triggeredLogin && loading ? (
                             <SpecialLoadingButton content={"Logging In"} />
                         ) : (
                             <Button
