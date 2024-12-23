@@ -16,7 +16,7 @@ const projectSchema = new mongoose.Schema({
     projectLink: String,
     technologies: {
         type: String,
-        required: [true, "Proficiency required!"],
+        required: [true, "Technologies required!"],
     },
     stack: String,
     deployed: String,
