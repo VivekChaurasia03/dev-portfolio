@@ -86,11 +86,10 @@ const ForgotPassword = () => {
                         </div>
                     </div>
                 </div>
-                <div className="hidden bg-muted lg:block">
+                <div className="flex justify-center items-center bg-muted">
                     <img
-                        src="/placeholder.svg"
-                        alt="Image"
-                        className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+                        src="/FORGOT_PASS_HOLDER.png"
+                        alt="fogot-pass"
                     />
                 </div>
             </div>

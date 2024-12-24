@@ -92,11 +92,10 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-            <div className="hidden bg-muted lg:block">
+            <div className="flex justify-center items-center bg-muted">
                 <img
                     src="/LOGIN_HOLDER.png"
-                    alt="Image"
-                    className="h-[100vh] w-full object-cover dark:brightness-[0.2] dark:grayscale"
+                    alt="login"
                 />
             </div>
         </div>
