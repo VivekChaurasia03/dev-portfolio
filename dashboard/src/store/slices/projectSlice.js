@@ -103,7 +103,7 @@ export const getAllProjects = () => async (dispatch) => {
     dispatch(projectSlice.actions.getAllProjectsRequest());
     try {
         const { data } = await axios.get(
-            "http://localhost:4000/api/v1/project/getall",
+            "https://dev-portfolio-backend.onrender.com/api/v1/project/getall",
             {
                 withCredentials: true,
             }
@@ -123,7 +123,7 @@ export const getProject = (id) => async (dispatch) => {
     dispatch(projectSlice.actions.getProjectRequest());
     try {
         const { data } = await axios.get(
-            `http://localhost:4000/api/v1/project/get/${id}`,
+            `https://dev-portfolio-backend.onrender.com/api/v1/project/get/${id}`,
             { withCredentials: true }
         );
         dispatch(projectSlice.actions.getProjectSuccess(data.project));
@@ -139,7 +139,7 @@ export const deleteProject = (id) => async (dispatch) => {
     dispatch(projectSlice.actions.deleteProjectRequest());
     try {
         const { data } = await axios.delete(
-            `http://localhost:4000/api/v1/project/delete/${id}`,
+            `https://dev-portfolio-backend.onrender.com/api/v1/project/delete/${id}`,
             { withCredentials: true }
         );
         dispatch(projectSlice.actions.deleteProjectSuccess(data.message));
@@ -157,7 +157,7 @@ export const addNewProject = (projectData) => async (dispatch) => {
     dispatch(projectSlice.actions.addNewProjectRequest());
     try {
         const { data } = await axios.post(
-            `http://localhost:4000/api/v1/project/add`,
+            `https://dev-portfolio-backend.onrender.com/api/v1/project/add`,
             projectData,
             {
                 withCredentials: true,
@@ -179,7 +179,7 @@ export const updateProject = (id, projectData) => async (dispatch) => {
     dispatch(projectSlice.actions.updateProjectRequest());
     try {
         const { data } = await axios.put(
-            `http://localhost:4000/api/v1/project/update/${id}`,
+            `https://dev-portfolio-backend.onrender.com/api/v1/project/update/${id}`,
             projectData,
             {
                 withCredentials: true,
